@@ -16,7 +16,6 @@ class ContactForm extends React.Component {
     handleSubmit = event => {
         event.preventDefault();
         this.props.onSubmit(this.state.name, this.state.number);
-        this.setState({ name: '', number: '' });
         this.reset();
     };
     reset = () => { 
@@ -26,8 +25,7 @@ class ContactForm extends React.Component {
     render() { 
         return (
             <form className={ s.contactsForm} onSubmit={this.handleSubmit}>
-                <label htmlFor={this.nameInputId}>
-                    
+                <label htmlFor={this.nameInputId}>  
                     Name
            <br />
                     <input
@@ -37,8 +35,6 @@ class ContactForm extends React.Component {
                     value={this.state.name}
                     onChange={this.handleChange}
                         id={this.nameInputId} />
-                    
-                  
                 </label>
                 <br/>
                 <label>
@@ -54,10 +50,8 @@ class ContactForm extends React.Component {
                  <br/>
                 <button type="submit">Add contact</button>
                 </form>
-           
         );
     };
-    
 };
 
 export default ContactForm;
